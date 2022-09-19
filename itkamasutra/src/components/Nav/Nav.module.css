@@ -12,3 +12,15 @@
 .active {
   color: gold;
 }
+.itemSettings {
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+}
+
+.itemFriends {
+  text-decoration: none;
+  color: white;
+  margin-top: 35px;
+  font-size: 200%;
+}

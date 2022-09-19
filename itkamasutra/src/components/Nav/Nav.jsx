@@ -1,8 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Friend from "../Friends/Friend";
+import Friends from "../Friends/Friends";
 import style from "./Nav.module.css";
 
-const Nav = () => {
+const Nav = (props) => {
+  // const miniFriend = props.state.friends.map((d) => <Friend name={d.name} />);
   return (
     <nav className={style.nav}>
       <div className={style.item}>
@@ -45,7 +48,7 @@ const Nav = () => {
           Music
         </NavLink>
       </div>
-      <div className={style.item}>
+      <div className={style.itemSettings}>
         <NavLink
           to="Settings"
           className={(navData) =>
@@ -53,6 +56,17 @@ const Nav = () => {
           }
         >
           Settings
+        </NavLink>
+      </div>
+      <div className={style.itemFriends}>
+        <NavLink
+          to="Friends"
+          className={(navData) =>
+            navData.isActive ? style.active : style.item
+          }
+        >
+          Friends
+          {/* <Friends /> */}
         </NavLink>
       </div>
     </nav>
