@@ -8,7 +8,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { updateNewPostText } from "./redux/state";
+import { updateNewPostText, updateNewMessageText } from "./redux/state";
 
 const App = (props) => {
   return (
@@ -31,7 +31,14 @@ const App = (props) => {
             />
             <Route
               path="/dialogs/*"
-              element={<Dialogs state={props.state.dialogsPage} />}
+              element={
+                <Dialogs
+                  state={props.state.dialogsPage}
+                  addMessage={props.addMessage}
+                  updateNewMessageText={updateNewMessageText}
+                  newMessageText={props.state.dialogsPage.newMessageText}
+                />
+              }
             />
             <Route path="/news/*" element={<News />} />
             <Route path="/music/*" element={<Music />} />
