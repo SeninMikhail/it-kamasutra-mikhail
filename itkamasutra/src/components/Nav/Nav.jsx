@@ -5,7 +5,6 @@ import Friends from "../Friends/Friends";
 import style from "./Nav.module.css";
 
 const Nav = (props) => {
-  // const miniFriend = props.state.friends.map((d) => <Friend name={d.name} />);
   return (
     <nav className={style.nav}>
       <div className={style.item}>
@@ -66,7 +65,7 @@ const Nav = (props) => {
           }
         >
           Friends
-          {/* <Friends /> */}
+          {/* <Friends state={props.state.sideBar} /> */}
         </NavLink>
       </div>
     </nav>
