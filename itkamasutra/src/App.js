@@ -6,17 +6,14 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import Friends from "./components/Friends/Friends";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { updateNewPostText, updateNewMessageText } from "./redux/state";
 
 const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Nav />
-        <Friends state={props.state.sideBar} />
+        <Nav state={props.state} />
         <div className="app-wrapper-content">
           <Routes>
             <Route
@@ -25,7 +22,7 @@ const App = (props) => {
                 <Profile
                   profilePage={props.state.profilePage}
                   addPost={props.addPost}
-                  updateNewPostText={updateNewPostText}
+                  updateNewPostText={props.updateNewPostText}
                 />
               }
             />
@@ -35,7 +32,7 @@ const App = (props) => {
                 <Dialogs
                   state={props.state.dialogsPage}
                   addMessage={props.addMessage}
-                  updateNewMessageText={updateNewMessageText}
+                  updateNewMessageText={props.updateNewMessageText}
                   newMessageText={props.state.dialogsPage.newMessageText}
                 />
               }

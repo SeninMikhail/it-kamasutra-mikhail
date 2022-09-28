@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Friend from "../Friends/Friend";
 import Friends from "../Friends/Friends";
 import style from "./Nav.module.css";
 
@@ -64,9 +63,11 @@ const Nav = (props) => {
             navData.isActive ? style.active : style.item
           }
         >
-          Friends
-          {/* <Friends state={props.state.sideBar} /> */}
+          Friends:
         </NavLink>
+        <div className={style.itemFriendsLink}>
+          <Friends state={props.state.sideBar} />
+        </div>
       </div>
     </nav>
   );
