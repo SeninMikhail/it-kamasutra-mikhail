@@ -5,7 +5,7 @@ import style from "./Dialogs.module.css";
 import {
   addMessageActionCreater,
   updateNewMessageTextActionCreater,
-} from "../../redux/state";
+} from "../../redux/dialogs-reducer";
 
 const Dialogs = (props) => {
   let dialogsElement = props.state.dialogs.map((d) => (
@@ -35,6 +35,7 @@ const Dialogs = (props) => {
         {messagesElement}
         <div>
           <textarea
+            placeholder="Enter message"
             onChange={onMessageChange}
             ref={newMessageElement}
             value={props.newMessageText}
