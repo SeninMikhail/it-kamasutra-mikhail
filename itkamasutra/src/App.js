@@ -22,8 +22,6 @@ const App = (props) => {
                 <Profile
                   profilePage={props.state.profilePage}
                   dispatch={props.dispatch}
-                  // addPost={props.addPost}
-                  // updateNewPostText={props.updateNewPostText}
                 />
               }
             />
@@ -33,8 +31,6 @@ const App = (props) => {
                 <Dialogs
                   state={props.state.dialogsPage}
                   dispatch={props.dispatch}
-                  // addMessage={props.addMessage}
-                  // updateNewMessageText={props.updateNewMessageText}
                   newMessageText={props.state.dialogsPage.newMessageText}
                 />
               }
@@ -42,10 +38,6 @@ const App = (props) => {
             <Route path="/news/*" element={<News />} />
             <Route path="/music/*" element={<Music />} />
             <Route path="/settings/*" element={<Settings />} />
-            {/* <Route
-              path="/friends/*"
-              element={<Friends state={props.state.sideBar} />}
-            /> */}
           </Routes>
         </div>
       </div>
