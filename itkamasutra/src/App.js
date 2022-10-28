@@ -7,8 +7,10 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = (props) => {
+  // debugger;
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -20,18 +22,20 @@ const App = (props) => {
               path="/profile/*"
               element={
                 <Profile
-                  profilePage={props.state.profilePage}
-                  dispatch={props.dispatch}
+                  store={props.store}
+                  // profilePage={props.state.profilePage}
+                  // dispatch={props.dispatch}
                 />
               }
             />
             <Route
               path="/dialogs/*"
               element={
-                <Dialogs
-                  state={props.state.dialogsPage}
-                  dispatch={props.dispatch}
-                  newMessageText={props.state.dialogsPage.newMessageText}
+                <DialogsContainer
+                  store={props.store}
+                  // state={props.state.dialogsPage}
+                  // dispatch={props.dispatch}
+                  // newMessageText={props.state.dialogsPage.newMessageText}
                 />
               }
             />
