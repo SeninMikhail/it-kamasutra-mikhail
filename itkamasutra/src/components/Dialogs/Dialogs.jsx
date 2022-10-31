@@ -29,7 +29,7 @@ const Dialogs = (props) => {
     props.updateNewMessageTextActionCreater(text);
     // props.dispatch(updateNewMessageTextActionCreater(text));
   };
-  // debugger;
+  debugger;
   return (
     <div className={style.dialogs}>
       <div className={style.dialogsItems}>{dialogsElement}</div>
