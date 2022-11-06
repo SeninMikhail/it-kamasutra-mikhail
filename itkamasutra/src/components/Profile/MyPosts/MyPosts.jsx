@@ -7,7 +7,7 @@ import style from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-  // debugger;
+  debugger;
   let postsElements = props.posts.map((p) => (
     <Post message={p.message} likesCount={p.likesCount} />
   ));
@@ -20,7 +20,7 @@ const MyPosts = (props) => {
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostTextActionCreater(text);
+    props.onPostChange(text);
     // props.dispatch(action);
   };
 

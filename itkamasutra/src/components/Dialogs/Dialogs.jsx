@@ -26,10 +26,10 @@ const Dialogs = (props) => {
 
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
-    props.updateNewMessageTextActionCreater(text);
+    props.onMessageChange(text);
     // props.dispatch(updateNewMessageTextActionCreater(text));
   };
-  debugger;
+  // debugger;
   return (
     <div className={style.dialogs}>
       <div className={style.dialogsItems}>{dialogsElement}</div>
