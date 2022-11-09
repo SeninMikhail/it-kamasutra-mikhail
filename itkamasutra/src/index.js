@@ -10,11 +10,11 @@ import { Provider } from "react-redux";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 export let rerenderEntireTree = (state) => {
   root.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <App state={state} />
-      </Provider>
-    </React.StrictMode>
+    // <React.StrictMode>
+    <Provider store={store}>
+      <App state={state} />
+    </Provider>
+    // </React.StrictMode>
   );
 };
 
