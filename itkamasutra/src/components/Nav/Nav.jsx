@@ -38,6 +38,16 @@ const Nav = (props) => {
       </div>
       <div className={style.item}>
         <NavLink
+          to="users"
+          className={(navData) =>
+            navData.isActive ? style.active : style.item
+          }
+        >
+          Users
+        </NavLink>
+      </div>
+      <div className={style.item}>
+        <NavLink
           to="Music"
           className={(navData) =>
             navData.isActive ? style.active : style.item
