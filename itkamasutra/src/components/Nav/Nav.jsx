@@ -28,16 +28,6 @@ const Nav = (props) => {
       </div>
       <div className={style.item}>
         <NavLink
-          to="News"
-          className={(navData) =>
-            navData.isActive ? style.active : style.item
-          }
-        >
-          News
-        </NavLink>
-      </div>
-      <div className={style.item}>
-        <NavLink
           to="users"
           className={(navData) =>
             navData.isActive ? style.active : style.item
@@ -46,6 +36,17 @@ const Nav = (props) => {
           Users
         </NavLink>
       </div>
+      <div className={style.item}>
+        <NavLink
+          to="News"
+          className={(navData) =>
+            navData.isActive ? style.active : style.item
+          }
+        >
+          News
+        </NavLink>
+      </div>
+
       <div className={style.item}>
         <NavLink
           to="Music"
