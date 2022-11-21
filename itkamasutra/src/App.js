@@ -1,7 +1,6 @@
 import "./App.css";
 import Nav from "./components/Nav/Nav";
 import Header from "./components/Header/Header";
-
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -9,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = () => {
   // debugger;
@@ -16,7 +16,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
+        <HeaderContainer />
         {/* <Nav state={props.state} /> */}
         <Nav />
         <div className="app-wrapper-content">
