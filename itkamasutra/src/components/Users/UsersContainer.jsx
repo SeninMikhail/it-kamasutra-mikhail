@@ -10,6 +10,7 @@ import {
 import Users from "./Users";
 import Preloader from "../Common/Preloader/Preloader";
 import { usersAPI } from "../../api/api";
+import { withAuthRedirect } from "../../HOC/withAuthRedirect";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -52,12 +53,16 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, {
-  follow,
-  unfollow,
+// let withRedirect = withAuthRedirect(UsersContainer)
 
-  setCurrentPage,
+export default withAuthRedirect(
+  connect(mapStateToProps, {
+    follow,
+    unfollow,
 
-  toggleFollowingProgress,
-  getUsers,
-})(UsersContainer);
+    setCurrentPage,
+
+    toggleFollowingProgress,
+    getUsers,
+  })(UsersContainer)
+);
