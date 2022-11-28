@@ -10,35 +10,10 @@ import Dialogs from "./Dialogs";
 
 import { connect } from "react-redux";
 
-// const DialogsContainer = () => {
-//   return (
-//     <StoreContext.Consumer>
-//       {(store) => {
-//         let state = store.getState().dialogsPage;
-
-//         let addMessage = () => {
-//           store.dispatch(addMessageActionCreater());
-//         };
-
-//         let onMessageChange = (text) => {
-//           store.dispatch(updateNewMessageTextActionCreater(text));
-//         };
-
-//         return (
-//           <Dialogs
-//             updateNewMessageTextActionCreater={onMessageChange}
-//             addMessage={addMessage}
-//             dialogsPage={state}
-//           />
-//         );
-//       }}
-//     </StoreContext.Consumer>
-//   );
-// };
-
 let mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
+    isAuth: state.auth.isAuth,
   };
 };
 
