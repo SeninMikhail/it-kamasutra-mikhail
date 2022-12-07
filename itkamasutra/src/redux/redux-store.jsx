@@ -9,8 +9,10 @@ import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reducer";
 import thunkMiddleware from "redux-thunk";
+import { reducer as formReduser } from "redux-form";
 
 let reducers = combineReducers({
+  form: formReduser,
   profilePage: profileReducer,
   dialogsPage: dialogsReducer,
   sideBar: sidebarReducer,
