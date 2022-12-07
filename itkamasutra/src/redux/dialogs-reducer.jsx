@@ -15,7 +15,6 @@ let initialState = {
     { id: 4, message: "kabzda kak prosto" },
     { id: 5, message: "prisobachit' komponentu" },
   ],
-  newMessageText: "",
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -23,7 +22,7 @@ const dialogsReducer = (state = initialState, action) => {
     case ADD_MESSAGE: {
       let newMessage = {
         id: 6,
-        message: state.newMessageText,
+        message: action.newMessageText,
       };
       let stateCopy = { ...state };
       stateCopy.messages = [...state.messages];
@@ -41,9 +40,10 @@ const dialogsReducer = (state = initialState, action) => {
   }
 };
 
-export const addMessageActionCreater = () => {
+export const addMessageActionCreater = (newMessageText) => {
   return {
     type: ADD_MESSAGE,
+    newMessageText,
   };
 };
 

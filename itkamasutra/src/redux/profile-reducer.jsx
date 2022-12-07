@@ -10,7 +10,7 @@ let initialState = {
     { id: 1, message: "Hello world", likesCount: 12 },
     { id: 2, message: "My post", likesCount: 5 },
   ],
-  newPostText: "it-kamasutra",
+
   profile: null,
   status: "",
 };
@@ -20,7 +20,7 @@ const profileReducer = (state = initialState, action) => {
     case ADD_POST: {
       let newPost = {
         id: 5,
-        message: state.newPostText,
+        message: action.newPostText,
         likesCount: 0,
       };
       let stateCopy = { ...state };
@@ -49,9 +49,10 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export const addPostActionCreater = () => {
+export const addPostActionCreater = (newPostText) => {
   return {
     type: ADD_POST,
+    newPostText,
   };
 };
 export const updateNewPostTextActionCreater = (text) => {

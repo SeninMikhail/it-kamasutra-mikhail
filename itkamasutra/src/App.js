@@ -12,8 +12,6 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 
 const App = () => {
-  // debugger;
-
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -22,8 +20,6 @@ const App = () => {
         <Nav />
         <div className="app-wrapper-content">
           <Routes>
-            {/* <Route path="/profile/:userId" element={<ProfileContainer />} />
-            <Route path="/profile/*" element={<ProfileContainer />} /> */}
             <Route path="/profile" element={<ProfileContainer />}>
               <Route path=":userId" element={<ProfileContainer />} />
             </Route>
