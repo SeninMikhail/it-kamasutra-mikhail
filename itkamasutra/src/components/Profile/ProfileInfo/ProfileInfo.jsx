@@ -2,6 +2,7 @@ import React from "react";
 import Preloader from "../../Common/Preloader/Preloader";
 import style from "./ProfileInfo.module.css";
 import ProfileStatus from "./ProfileStatus";
+import ProfileStatusWithHooks from "./ProfileStatusWhithHooks";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -10,14 +11,10 @@ const ProfileInfo = (props) => {
 
   return (
     <div className={style.content}>
-      {/* <div className={style.img}>
-        <img src="https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg" />
-      </div> */}
-
       <div className={style.descriptionBlock}>
         <img src={props.profile.photos.large} />
 
-        <ProfileStatus
+        <ProfileStatusWithHooks
           status={props.status}
           updateStatus={props.updateStatus}
         />

@@ -1,7 +1,7 @@
 import "./App.css";
 import Nav from "./components/Nav/Nav";
 import Header from "./components/Header/Header";
-import News from "./components/News/News";
+import News, { Counter } from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -25,6 +25,7 @@ const App = () => {
             </Route>
             <Route path="/dialogs/*" element={<DialogsContainer />} />
             <Route path="/news/*" element={<News />} />
+            {/* <Route path="/count/*" element={<Counter />} /> */}
             <Route path="/music/*" element={<Music />} />
             <Route path="/settings/*" element={<Settings />} />
             <Route path="/users/*" element={<UsersContainer />} />
